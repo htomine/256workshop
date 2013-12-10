@@ -1,0 +1,132 @@
+@import "compass";
+@mixin font-gloria {
+        font-family: 'Gloria Hallelujah', cursive;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #fff url(../img/wood-bg.png) repeat left top;
+    background-size: 50%;
+    font-family:'Lucida Grande', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',
+ Meiryo, メイリオ, sans-serif;
+}
+.wrap {
+    background-color: #fff;
+    padding: 10px 20px 0;
+}
+
+.hero-unit {
+    margin-bottom: 20px;
+    padding: 40px 60px;
+    @include background-image(linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 50%,rgba(0,0,0,0) 100%),url(../img/header-bg03.jpg));
+    background-position: left top,left -250px;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    h1 {
+        text-shadow: 0 5px 5px rgba(0,0,0,0.9);
+        font-size: 72px;
+        @include font-gloria;
+    }
+    p {
+        text-shadow: 0 1px 4px rgba(0,0,0,0.9);
+    }
+    .poweredby {
+        font-size: 14px;
+        font-weight: normal;
+        a {
+            color: #fff;
+            }
+        span {
+            @include font-gloria;
+        }
+    }
+}
+h2 {
+    @include font-gloria;
+}
+h3 {
+    font-size: 16px;
+    @include font-gloria;
+}
+.team-select {
+    list-style-type: none;
+    li {
+        background-color: #000;
+        @include border-radius(10px);
+    }
+    li a{
+        display: table-cell;
+        width: 220px;
+        height: 146px;
+        background-color: #fff;
+        @include border-radius(10px);
+        vertical-align: middle;
+        font-size: 16px;
+        text-align: center;
+        text-shadow: 0 0 8px #000;
+        color: #fff;
+        opacity: .6;
+        @include transition(all .1s ease-out);
+        &:hover {
+            opacity: 1;
+            text-decoration: none;
+            @include transition(all .15s ease-out);
+        }
+    }
+    .active a{
+        opacity: 1;
+        text-decoration: none;
+        @include transition(all .15s ease-out);
+    }
+}
+@for $i from 1 through 4 {
+    .team-select .team#{$i} a{
+        @include background-image(linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 50%,rgba(0,0,0,0) 100%),url(../img/team#{$i}.jpg));
+    }
+}
+.member-info-photo{
+    display: none;
+    height: 147px;
+    overflow: hidden;
+}
+.member-info-Role {
+    display: none;
+}
+
+.photo {
+    position: relative;
+    a{
+        @include transition(all .1s ease-out);
+    }
+    a:hover {
+        opacity: .6;
+        @include transition(all .15s ease-out);
+    }
+}
+.result {
+    margin-bottom: 20px;
+}
+.caption {
+    position: absolute;
+    bottom: 20px;
+    width: 925px;
+    padding: 10px 0 10px 15px;
+    background-color: rgba(0,0,0,0.5);
+    line-height: 1.7;
+    color: #fff;
+    font-size: 18px;
+}
+
+.detail {
+    word-break: break-word;
+}
+
+.footer div {
+    height: 44px;
+    background-color: #000;
+    margin-top: 30px;
+    line-height: 44px;
+    color: #fff;
+}
